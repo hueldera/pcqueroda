@@ -1,0 +1,18 @@
+{% extends 'searcher/base.html' %} {% block content %}
+
+<div class="banner">
+  <h1>Vamos escolher qual <span>PC Que Roda</span>?</h1>
+  <h2>
+    Nosso algoritmo escolheu os hardwares com melhor Custo X Benefício,
+    <span>escolha o computador mais adequado ao seu orçamento</span>:
+  </h2>
+</div>
+<div class="selected-game">
+  <h2>Você quer rodar:</h2>
+  {% include 'searcher/results-selected-list-partial.html' %}
+</div>
+<div class="results">
+  {% include 'searcher/results-computers-partial.html' %}
+</div>
+
+{% endblock content %}

@@ -1,0 +1,21 @@
+{% extends 'searcher/base.html' %} {% block content %}
+
+<div class="banner">
+  <h1>Vamos descobrir qual <span>PC Que Roda</span>?</h1>
+  <h2>
+    Para selecionarmos o melhor computador para você,
+    <span>selecione os softwares e jogos que vai utilizar</span>:
+  </h2>
+</div>
+<input
+  type="text"
+  class="search-input"
+  placeholder="Digite aqui o nome do Jogo ou Software"
+/>
+<div id="ajax-software-search-replace">
+  {% include 'searcher/softwares-results-partial.html' %}
+</div>
+<p id="selected-items-text"></p>
+<a class="next-button" href="results">Descobrir PC</a>
+
+{% endblock content %}

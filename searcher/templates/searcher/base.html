@@ -1,0 +1,29 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'searcher/main.css' %}"
+    />
+    <title>PcQueRoda</title>
+  </head>
+  <body>
+    <div id="content">
+      {% block content %} {% endblock %}
+    </div>
+
+    <script
+      type="text/javascript"
+      src="{% static 'searcher/main.js' %}"
+    ></script>
+    <script
+      type="text/javascript"
+      src="{% static 'searcher/ajax_search.js' %}"
+    ></script>
+  </body>
+</html>

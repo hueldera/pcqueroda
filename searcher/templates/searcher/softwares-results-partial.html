@@ -1,0 +1,14 @@
+{% if software_list %}
+<ul class="image-list">
+  {% for software in software_list %}
+  <li data-id="{{software.id}}">
+    <img src="{{software.image.url}}" alt="{{software.name}}" />
+    <h3 class="name">{{software.name}}</h3>
+  </li>
+  {% endfor %}
+</ul>
+{% else %}
+<h3 style="margin: 25px;text-align:center;">
+  Nenhum item foi encontrado em nossa base de dados ;(
+</h3>
+{% endif %}
