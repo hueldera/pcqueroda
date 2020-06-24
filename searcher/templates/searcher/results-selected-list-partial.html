@@ -2,7 +2,14 @@
 <ul class="selected-game-list">
   {% for software in selected_softwares %}
   <li>
+    {% if software.image %}
     <img src="{{software.image.url}}" alt="{{software.name}}" />
+    {% else %} {% load static %}
+    <img
+      src="{% static 'searcher/placeholder.png' %}"
+      alt="{{software.name}}"
+    />
+    {% endif %}
     <h3>{{software.name}}</h3>
   </li>
   {% endfor %}
