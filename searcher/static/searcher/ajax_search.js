@@ -1,6 +1,6 @@
 var user_input = $(".search-input");
 var softwares_div = $("#ajax-software-search-replace");
-var endpoint = "/searcher/";
+var endpoint = "/";
 var delay_by_in_ms = 700;
 let scheduled_function = false;
 

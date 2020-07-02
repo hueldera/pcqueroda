@@ -35,7 +35,7 @@ def discover_computers(request):
     context['selected_softwares'] = Software.objects.filter(pk__in=selected_softwares)
 
     if not context['selected_softwares']:
-        return redirect('/searcher/')
+        return redirect('/')
 
     context['computer_list']: Model =  Computer.objects.all()
 
