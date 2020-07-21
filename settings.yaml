@@ -60,10 +60,12 @@ default:
     - django.contrib.staticfiles.finders.AppDirectoriesFinder
 
 production:
-  DEBUG: true
+  DEBUG: false
   ALLOWED_HOSTS:
     - pcqueroda.com
     - pcqueroda.rj.r.appspot.com
+    - app.pcqueroda.com
+    - http://pcqueroda.herokuapp.com
     - 127.0.0.1
   DEFAULT_FROM_EMAIL: "contato@pcqueroda.com"
   # SECURE_HSTS_SECONDS: 60
