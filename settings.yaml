@@ -47,12 +47,12 @@ default:
     - NAME: django.contrib.auth.password_validation.CommonPasswordValidator
     - NAME: django.contrib.auth.password_validation.NumericPasswordValidator
 
-  LANGUAGE_CODE: en-us
+  LANGUAGE_CODE: pt-br
   TIME_ZONE: America/Sao_Paulo
   USE_I18N: true
   USE_L10N: true
   USE_TZ: true
-  STATIC_ROOT: static
+  STATIC_ROOT: staticfiles
   STATIC_URL: /static/
 
   STATICFILES_FINDERS:
@@ -65,7 +65,7 @@ production:
     - pcqueroda.com
     - pcqueroda.rj.r.appspot.com
     - app.pcqueroda.com
-    - http://pcqueroda.herokuapp.com
+    - pcqueroda.herokuapp.com
     - 127.0.0.1
   DEFAULT_FROM_EMAIL: "contato@pcqueroda.com"
   # SECURE_HSTS_SECONDS: 60
