@@ -7,6 +7,3 @@ urlpatterns = [
     path('', views.index, name='index'),
     path('results', views.discover_computers, name='results'),
 ]
-
-if settings.DEBUG:
-    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

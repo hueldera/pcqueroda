@@ -1,11 +1,14 @@
-{% extends 'searcher/base.html' %} {% block content %}
-
-<div class="selected-game">
-  <h2>Você quer rodar:</h2>
-  {% include 'searcher/results-selected-list-partial.html' %}
-</div>
+{% load static %}
 <div class="results">
-  {% include 'searcher/results-computers-partial.html' %}
+  <h2>PC RECOMENDADO:</h2>
+  <img
+    class="loading"
+    style="width: 100px; height: 100px;"
+    src="{% static 'searcher/loading.svg' %}"
+    alt="loading"
+  />
+  <h5 class="error" style="color:brown;text-align:center;" hidden>Desculpe, não encontramos nenhum computador perfeito para seus filtros. O que acha de tentar uma combinação de jogos diferentes?</h4>
+  <div class="rs-card big"></div>
+  <h4>Outras sugestões:</h4>
+  <ul class="rs-card-list"></ul>
 </div>
-
-{% endblock content %}

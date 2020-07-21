@@ -1,0 +1,24 @@
+{% if software_list %}
+<ul>
+  {% for software in software_list %}
+  <li class="software-item" data-name="{{software.name}}" data-id="{{software.id}}">
+    {% if software.image %}
+      <img src="{{software.image}}" alt="{{software.name}}" />
+    {% else %}
+    {% load static %}
+      <img
+        src="{% static 'searcher/placeholder.png' %}"
+        alt="{{software.name}}"
+      />
+    {% endif %}
+    <p>{{software.name}}</p>
+  </li>
+  {% endfor %}
+</ul>
+<h6>Selecione um software para continuar</h6>
+
+{% else %}
+<h3 style="margin: 25px;text-align:center;">
+  Nenhum item foi encontrado em nossa base de dados ;(
+</h3>
+{% endif %}

@@ -1,22 +1,43 @@
 {% extends 'searcher/base.html' %} {% block content %}
 
-<div id="navbar">
-      <input
-    type="text"
-    class="search-input"
-    placeholder="Digite aqui o nome do Jogo ou Software"
-  />
+<div class="steps-wrapper">
+  <ul class="step">
+    <li data-step="0" class="step-item active">
+      <a href="#">Seleção</a>
+    </li>
+    <li data-step="1" class="step-item">
+      <a href="#">Tipo</a>
+    </li>
+    <li data-step="2" class="step-item">
+      <a href="#">Resultados</a>
+    </li>
+  </ul>
 </div>
-<div class="section-search">
-  <div id="ajax-software-search-replace">
-    {% include 'searcher/softwares-results-partial.html' %}
+<div class="game-searcher">
+  <div style="width: 100%;">
+    <div data-step="0" hidden>
+      {% include 'searcher/select-software-search-partial.html' %}
+    </div>
+    <div data-step="1" hidden>
+      {% include 'searcher/select-type-partial.html' %}
+    </div>
+    <div data-step="2" hidden>
+      {% include 'searcher/results.html' %}
+    </div>
+  </div>
+  <div class="search-next">
+    <a href="#" class="back-link">Voltar</a>
+    <button class="btn btn-primary disabled">Continuar</button>
   </div>
 </div>
 
-{% comment %} <p id="selected-items-text"></p> {% endcomment %}
-<p hidden id="selected-items-text"></p>
-<div id="descbar">
-<a class="next-button" href="results">descobrir pc</a>
-</div>
-
+{% load static %}
+<script
+  type="text/javascript"
+  src="{% static 'searcher/js/flow.js' %}"
+></script>
+<script
+  type="text/javascript"
+  src="{% static 'searcher/js/ajax_search.js' %}"
+></script>
 {% endblock content %}
