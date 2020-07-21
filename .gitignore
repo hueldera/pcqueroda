@@ -1,7 +1,6 @@
 # Dev
 Redraw-513831ba78e4.json
 media/
-static/
 # Django #
 *.log
 *.pot
