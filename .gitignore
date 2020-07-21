@@ -119,4 +119,4 @@ GitHub.sublime-settings
 !.vscode/extensions.json
 .history
 # Ignore dynaconf secret files
-.secrets.*
+#.secrets.*
