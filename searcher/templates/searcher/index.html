@@ -1,21 +1,43 @@
 {% extends 'searcher/base.html' %} {% block content %}
 
-<div class="banner">
-  <h1>Vamos descobrir qual <span>PC Que Roda</span>?</h1>
-  <h2>
-    Para selecionarmos o melhor computador para você,
-    <span>selecione os softwares e jogos que vai utilizar</span>:
-  </h2>
+<div class="steps-wrapper">
+  <ul class="step">
+    <li data-step="0" class="step-item active">
+      <a href="#">Seleção</a>
+    </li>
+    <li data-step="1" class="step-item">
+      <a href="#">Tipo</a>
+    </li>
+    <li data-step="2" class="step-item">
+      <a href="#">Resultados</a>
+    </li>
+  </ul>
 </div>
-<input
-  type="text"
-  class="search-input"
-  placeholder="Digite aqui o nome do Jogo ou Software"
-/>
-<div id="ajax-software-search-replace">
-  {% include 'searcher/softwares-results-partial.html' %}
+<div class="game-searcher">
+  <div style="width: 100%;">
+    <div data-step="0" hidden>
+      {% include 'searcher/select-software-search-partial.html' %}
+    </div>
+    <div data-step="1" hidden>
+      {% include 'searcher/select-type-partial.html' %}
+    </div>
+    <div data-step="2" hidden>
+      {% include 'searcher/results.html' %}
+    </div>
+  </div>
+  <div class="search-next">
+    <a href="#" class="back-link">Voltar</a>
+    <button class="btn btn-primary disabled">Continuar</button>
+  </div>
 </div>
-<p id="selected-items-text"></p>
-<a class="next-button" href="results">Descobrir PC</a>
 
+{% load static %}
+<script
+  type="text/javascript"
+  src="{% static 'searcher/js/flow.js' %}"
+></script>
+<script
+  type="text/javascript"
+  src="{% static 'searcher/js/ajax_search.js' %}"
+></script>
 {% endblock content %}

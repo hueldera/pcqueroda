@@ -7,23 +7,39 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link
       rel="stylesheet"
+      href="https://unpkg.com/spectre.css/dist/spectre.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/spectre.css/dist/spectre-exp.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/spectre.css/dist/spectre-icons.min.css"
+    />
+    <link
+      rel="stylesheet"
       type="text/css"
-      href="{% static 'searcher/main.css' %}"
+      href="{% static 'searcher/styles.css' %}"
     />
     <title>PcQueRoda</title>
   </head>
   <body>
-    <div id="content">
-      {% block content %} {% endblock %}
-    </div>
+    <div class="container">
+      <header><h1>PcQueRoda</h1></header>
+      <main>
+        <div id="content">
+          {% block content %} {% endblock %}
+        </div>
+      </main>
+      <footer>
+        <p>
+          PcQueRoda não é uma marca ou loja de computadores.
+          Nós apenas selecionamos as melhores opções de acordo com a sua intenção de uso e listamos as Lojas que consideramos confiáveis baseadas nas avaliações de clientes.
+        </p>
 
-    <script
-      type="text/javascript"
-      src="{% static 'searcher/main.js' %}"
-    ></script>
-    <script
-      type="text/javascript"
-      src="{% static 'searcher/ajax_search.js' %}"
-    ></script>
+        <a href="#">Criado e mantido com ♡ pela Fluxel Solutions</a>
+      </footer>
+    </div>
   </body>
 </html>
