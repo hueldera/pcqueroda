@@ -15,7 +15,7 @@ function getResults() {
 
   $.ajax({
     url:
-      "http://127.0.0.1:8000/" +
+      "/" +
       "results?sw=" +
       Object.values(state.softwares).join("&sw=") +
       "&category=" +
