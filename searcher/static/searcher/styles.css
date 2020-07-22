@@ -108,6 +108,8 @@ body {
   margin-right: 20px;
   color: #7a79a0;
   font-weight: bold;
+  margin: 0;
+  cursor: pointer;
 }
 
 .game-searcher .search-input-wrapper {
@@ -160,6 +162,7 @@ footer {
 
 main {
   margin: 50px;
+  min-height: 500px;
 }
 
 header {
@@ -167,6 +170,16 @@ header {
   margin: 50px;
   color: #12ff8d;
 }
+header h4 {
+  color: #e0e0e0;
+  margin: 20px;
+  font-weight: lighter;
+}
+
+header h4 span {
+  font-weight: bold;
+}
+
 .step {
   margin-bottom: 50px;
 }
@@ -380,4 +393,34 @@ main .step-item .active a {
 .results h2 {
   font-weight: bold;
   color: #12ff8d;
+}
+
+a:active,
+a:focus,
+a:visited,
+a:focus-within,
+a:focus-visible,
+a:-moz-focusring {
+  outline: none !important;
+  border: none !important;
+  -moz-outline-style: none !important;
+  box-shadow: none !important;
+  color: inherit;
+}
+
+.side-bg {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: space-between;
+  margin-top: -200px;
+  width: 100%;
+}
+
+@media only screen and (max-width: 600px) {
+  .side-bg svg {
+    width: 100px;
+    height: 100%;
+    margin-top: 100px;
+  }
 }

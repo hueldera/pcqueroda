@@ -4,6 +4,22 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Quer saber qual melhor computador para rodar seu jogo favorito? Descubra agora, é grátis!"
+    />
+    <meta property="og:locale" content="pt_BR" />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:title"
+      content="PcQueRoda | A melhor ferramenta para encontrar seu PC Gamer Barato"
+    />
+    <meta
+      property="og:description"
+      content="A PcQueRoda ajuda você a encontrar o melhor computador baseado nos softwares e jogos que deseja rodar."
+    />
+    <meta property="og:url" content="https://app.pcqueroda.com/" />
+    <link rel="canonical" href="https://ead.guru" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link
       rel="stylesheet"
@@ -22,20 +38,66 @@
       type="text/css"
       href="{% static 'searcher/styles.css' %}"
     />
-    <title>PcQueRoda</title>
+    <link
+      rel="shortcut icon"
+      type="image/png"
+      href="{% static 'searcher/favicon.png' %}"
+      sizes="32x32"
+    />
+    <title>
+      PcQueRoda | A melhor ferramenta para encontrar seu PC Gamer Barato
+    </title>
+    <style>
+      *:focus {
+        box-shadow: none !important;
+      }
+    </style>
   </head>
   <body>
     <div class="container">
-      <header><h1>PcQueRoda</h1></header>
+      <header>
+        <a>
+          <img src="{% static 'searcher/logo.png' %}" alt="Logo" width="300" />
+        </a>
+        <h4>
+          <span
+            >Vamos encontrar o melhor computador Custo X Benefício que rode o
+            que você quiser?</span
+          >
+          Selecione as opções abaixo para descobrir os melhores resultados:
+        </h4>
+      </header>
       <main>
         <div id="content">
           {% block content %} {% endblock %}
         </div>
       </main>
+      <div class="side-bg">
+        <svg
+          width="181"
+          height="226"
+          viewBox="0 0 181 226"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path d="M0 226V0L181 226H0Z" fill="#12FF8D" />
+        </svg>
+        <svg
+          width="181"
+          height="226"
+          viewBox="0 0 181 226"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path d="M181 226V0L0 226H181Z" fill="#12FF8D" />
+        </svg>
+      </div>
       <footer>
         <p>
-          PcQueRoda não é uma marca ou loja de computadores.
-          Nós apenas selecionamos as melhores opções de acordo com a sua intenção de uso e listamos as Lojas que consideramos confiáveis baseadas nas avaliações de clientes.
+          PcQueRoda não é uma marca ou loja de computadores. Nós apenas
+          selecionamos as melhores opções de acordo com a sua intenção de uso e
+          listamos as Lojas que consideramos confiáveis baseadas nas avaliações
+          de clientes.
         </p>
 
         <a href="#">Criado e mantido com ♡ pela Fluxel Solutions</a>

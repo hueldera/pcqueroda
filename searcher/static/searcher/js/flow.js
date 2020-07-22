@@ -25,17 +25,18 @@ function getResults() {
       $(".results .loading").hide();
       $(".results .error").hide();
       if (data["success"]["computer_list"].length == 0) {
-        $(".results .error").show();
+        $(".results .error").fadeIn();
       } else {
-        $(".results .rs-card-list").show();
-        $(".results .rs-card.big").show();
+        $(".results .rs-card-list").fadeIn();
+        $(".results .rs-card.big").fadeIn();
         if (data["success"]["computer_list"].length > 1) {
-          $(".results h4").show();
+          $(".results h4").fadeIn(1000);
         }
 
         var featured = data["success"]["computer_list"][0];
-        $(".results .rs-card.big").append(
-          ` <img
+        $(".results .rs-card.big")
+          .append(
+            ` <img
       src="${featured.fields.image}"
       alt="${featured.fields.title}"
     />
@@ -46,11 +47,14 @@ function getResults() {
       </p>
       <a href="${featured.fields.affiliate_link}" target="_blank">VER MAIS</a>
     </div>`
-        );
+          )
+          .hide()
+          .fadeIn();
 
         data["success"]["computer_list"].slice(1).map(function (computer) {
-          $(".results .rs-card-list").append(
-            `<li class="rs-card small">
+          $(".results .rs-card-list")
+            .append(
+              `<li class="rs-card small">
         <img
           src="${computer.fields.image}"
           alt="${computer.fields.title}"
@@ -65,7 +69,9 @@ function getResults() {
           }" target="_blank">VER MAIS</a>
         </div>
       </li>`
-          );
+            )
+            .hide()
+            .fadeIn();
         });
       }
     },
@@ -100,7 +106,7 @@ function showStep(step) {
     "active"
   );
   $(".game-searcher div[data-step").hide();
-  $(".game-searcher div[data-step='" + step + "']").show();
+  $(".game-searcher div[data-step='" + step + "']").fadeIn();
 }
 
 function addStepButtonListeners() {
@@ -119,7 +125,7 @@ function getStatusText() {
       .join(", ")
       .replace(/,\s([^,]+)$/, " e $1")}</span>`;
   } else {
-    return `Selecione um software para continuar`;
+    return `Selecione no mínimo um jogo ou software para continuar.`;
   }
 }
 
