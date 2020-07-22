@@ -277,12 +277,13 @@ main .step-item .active a {
 }
 
 .rs-card.big img {
-  width: 150px;
+  width: 200px;
   height: 250px;
   object-fit: cover;
   border-radius: 10px;
   pointer-events: none;
   text-align: center;
+  margin: 20px;
 }
 
 .rs-card.small img {
@@ -378,7 +379,6 @@ main .step-item .active a {
 }
 
 .rs-card.big .description {
-  padding: 20px 0px 0px 0px;
   max-width: 400px;
 }
 
