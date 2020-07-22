@@ -69,6 +69,21 @@
           {% block content %} {% endblock %}
         </div>
       </main>
+      <div class="share-buttons">
+        Compartilhar
+        <ul>
+          <li>
+            <a
+              href="whatsapp://send?text=Não Sabe Qual PC Comprar? Deixa que nós te falamos qual PcQueRoda! https://app.pcqueroda.com "
+              data-action="share/whatsapp/share"
+              ><img
+                src="{% static 'searcher/social/whatsapp.png' %}"
+                alt="whatsapp"
+                srcset=""
+            /></a>
+          </li>
+        </ul>
+      </div>
       <div class="side-bg">
         <svg
           width="181"
@@ -89,6 +104,7 @@
           <path d="M181 226V0L0 226H181Z" fill="#12FF8D" />
         </svg>
       </div>
+
       <footer>
         <p>
           PcQueRoda não é uma marca ou loja de computadores. Nós apenas

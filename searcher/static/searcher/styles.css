@@ -429,3 +429,21 @@ a:-moz-focusring {
     margin-top: 100px;
   }
 }
+
+.share-buttons ul {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.share-buttons {
+  margin-top: 20px;
+  width: 100%;
+  text-align: center;
+  color: rgb(153, 153, 153);
+}
