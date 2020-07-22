@@ -7,6 +7,11 @@ body {
   padding: 0;
 }
 
+h5 {
+  color: #12ff8d;
+  font-weight: bold;
+}
+
 .software-list h6 {
   text-align: center;
 }
