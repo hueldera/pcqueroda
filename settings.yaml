@@ -1,5 +1,6 @@
 default:
   DEBUG: true
+  DEFAULT_FILE_STORAGE: storages.backends.gcloud.GoogleCloudStorage
 
   ALLOWED_HOSTS:
     - "*"
@@ -80,4 +81,3 @@ production:
   CSRF_COOKIE_HTTPONLY: true
   X_FRAME_OPTIONS: DENY
   SECURE_REFERRER_POLICY: origin
-  DEFAULT_FILE_STORAGE: storages.backends.gcloud.GoogleCloudStorage
