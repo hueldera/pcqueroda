@@ -16,6 +16,12 @@ h5 {
   text-align: center;
 }
 
+.software-list h6 .delete:hover {
+  text-decoration: line-through;
+  color: #ff1245;
+  cursor: pointer;
+}
+
 .software-list ul {
   list-style: none;
   display: flex;
@@ -71,6 +77,11 @@ h5 {
   flex-direction: column;
   flex-wrap: wrap;
   width: 100%;
+}
+
+.game-searcher > div {
+  max-width: 1200px;
+  align-self: center;
 }
 
 .game-searcher .search-next {

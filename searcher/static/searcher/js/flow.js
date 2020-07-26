@@ -122,6 +122,9 @@ function addStepButtonListeners() {
 function getStatusText() {
   if (Object.keys(state.softwares).length) {
     return `Você selecionou: <span>${Object.keys(state.softwares)
+      .map((e) => {
+        return `<span class="delete" data-id="${state.softwares[e]}">${e}</span>`;
+      })
       .join(", ")
       .replace(/,\s([^,]+)$/, " e $1")}</span>`;
   } else {
@@ -143,8 +146,6 @@ $(".type-selector ul li").click((e) => {
 });
 
 function addSoftwareListeners() {
-  $(".software-list h6").html(getStatusText());
-
   Object.keys(state.softwares).forEach((element) => {
     $(
       ".software-list ul li[data-id='" + state.softwares[element] + "']"
@@ -152,6 +153,7 @@ function addSoftwareListeners() {
   });
 
   $(".software-list h6").html(getStatusText());
+
   $(".software-list ul li").click((e) => {
     var li = $(e.target).closest("li");
     if (!li.hasClass("active")) {
@@ -170,6 +172,17 @@ function addSoftwareListeners() {
     }
 
     $(".software-list h6").html(getStatusText());
+    var clickFunction = function (e) {
+      var name = $(e.target).text();
+
+      var li = $(`.software-list ul li[data-id="${state.softwares[name]}"]`);
+      li.removeClass("active");
+      delete state.softwares[name];
+      $(".software-list h6").html(getStatusText());
+      $(".software-list h6 .delete").click(clickFunction);
+    };
+
+    $(".software-list h6 .delete").click(clickFunction);
   });
 }
 

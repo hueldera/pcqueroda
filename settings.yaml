@@ -67,7 +67,7 @@ production:
     - app.pcqueroda.com
     - pcqueroda.herokuapp.com
     - 127.0.0.1
-  DEFAULT_FROM_EMAIL: "contato@pcqueroda.com"
+  DEFAULT_FROM_EMAIL: contato@pcqueroda.com
   # SECURE_HSTS_SECONDS: 60
   SECURE_SSL_REDIRECT: true
   # SECURE_HSTS_PRELOAD: true
@@ -78,5 +78,6 @@ production:
   # SESSION_COOKIE_HTTPONLY: true
   CSRF_COOKIE_SECURE: true
   CSRF_COOKIE_HTTPONLY: true
-  X_FRAME_OPTIONS: "DENY"
-  SECURE_REFERRER_POLICY: "origin"
+  X_FRAME_OPTIONS: DENY
+  SECURE_REFERRER_POLICY: origin
+  DEFAULT_FILE_STORAGE: storages.backends.gcloud.GoogleCloudStorage
