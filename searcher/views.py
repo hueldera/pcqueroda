@@ -6,7 +6,13 @@ from .models import Software, Computer
 from django.db.models import Q, Model, Max, Min
 from django.core import serializers
 import json
+from django.template.defaultfilters import register
+from urllib.parse import unquote
 
+
+@register.filter
+def unquote_new(value):
+    return unquote(value)
 
 def index(request):
     context = {}
