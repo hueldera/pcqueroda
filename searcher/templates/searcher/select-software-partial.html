@@ -3,7 +3,11 @@
   {% for software in software_list %}
   <li class="software-item" data-name="{{software.name}}" data-id="{{software.id}}">
     {% if software.image %}
-      <img src="{{software.image}}" alt="{{software.name}}" />
+      {% if 'https' in software.image.url %}
+        <img src="{{software.image}}" alt="{{software.name}}" />
+      {% else%}
+        <img src="{{software.image.url}}" alt="{{software.name}}" />
+      {% endif %}
     {% else %}
     {% load static %}
       <img
