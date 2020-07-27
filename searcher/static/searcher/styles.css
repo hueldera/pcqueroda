@@ -12,6 +12,10 @@ h5 {
   font-weight: bold;
 }
 
+.step-description h6 span {
+  color: #12ff8d;
+}
+
 .software-list h6 {
   text-align: center;
 }
@@ -128,6 +132,13 @@ h5 {
   cursor: pointer;
 }
 
+.step-description {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
 .game-searcher .search-input-wrapper {
   height: 100%;
 }
@@ -138,6 +149,17 @@ h5 {
   align-items: center;
   width: 100%;
   justify-content: space-around;
+}
+
+.game-searcher .search-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.game-searcher .search-title p {
+  margin: 0;
+  margin-left: 10px;
 }
 
 @media only screen and (max-width: 600px) {
