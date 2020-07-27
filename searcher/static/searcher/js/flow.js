@@ -112,10 +112,22 @@ function showStep(step) {
 function addStepButtonListeners() {
   $(".game-searcher .search-next button").click((e) => {
     showStep(++state.activeStep);
+    $("html, body").animate(
+      {
+        scrollTop: $("#searcher-app").offset().top,
+      },
+      500
+    );
   });
 
   $(".game-searcher .search-next .back-link").click((e) => {
     showStep(--state.activeStep);
+    $("html, body").animate(
+      {
+        scrollTop: $("#searcher-app").offset().top,
+      },
+      500
+    );
   });
 }
 

@@ -82,7 +82,7 @@ def discover_computers(request):
                             Q(category__iexact=category)
                             ).order_by('processor_level', 'graphics_level', 'memory_level', 'price')
 
-    print(computers)
+    # print(computers)
     base_computers = {}
 
     computer_list = []
