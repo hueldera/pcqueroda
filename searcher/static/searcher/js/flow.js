@@ -154,6 +154,19 @@ function addSoftwareListeners() {
 
   $(".software-list h6").html(getStatusText());
 
+  var clickFunction = function (e) {
+    var name = $(e.target).text();
+
+    var li = $(`.software-list ul li[data-id="${state.softwares[name]}"]`);
+    li.removeClass("active");
+    delete state.softwares[name];
+    $(".software-list h6").html(getStatusText());
+    $(".software-list h6 .delete").click(clickFunction);
+  };
+
+  $(".software-list h6").html(getStatusText());
+  $(".software-list h6 .delete").click(clickFunction);
+
   $(".software-list ul li").click((e) => {
     var li = $(e.target).closest("li");
     if (!li.hasClass("active")) {
@@ -172,16 +185,6 @@ function addSoftwareListeners() {
     }
 
     $(".software-list h6").html(getStatusText());
-    var clickFunction = function (e) {
-      var name = $(e.target).text();
-
-      var li = $(`.software-list ul li[data-id="${state.softwares[name]}"]`);
-      li.removeClass("active");
-      delete state.softwares[name];
-      $(".software-list h6").html(getStatusText());
-      $(".software-list h6 .delete").click(clickFunction);
-    };
-
     $(".software-list h6 .delete").click(clickFunction);
   });
 }
