@@ -25,8 +25,9 @@ def index(request):
         software_list = Software.objects.filter(Q(name__icontains='valorant') |
                                                 Q(name__icontains='autodesk maya') |
                                                 Q(name__icontains='minecraft') |
-                                                Q(name__icontains='fortnite') |
-                                                Q(name__icontains='league of legends')
+                                                Q(name__icontains='fortnite: battle royale') |
+                                                Q(name__icontains='league of legends') |
+                                                Q(name__icontains='grand theft auto v')
                                                 ).order_by('-updated_at')[:6]
 
     context['software_list'] = software_list
