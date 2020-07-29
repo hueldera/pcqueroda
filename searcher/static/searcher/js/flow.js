@@ -89,7 +89,7 @@ function getResults() {
 }
 
 function showStep(step) {
-  if (state.type.length > 0) {
+  if (state.type.length > 0 || Object.keys(state.softwares).length > 0) {
     $(".search-next button.disabled").removeClass("disabled");
   } else {
     $(".search-next button").addClass("disabled");
