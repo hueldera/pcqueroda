@@ -22,7 +22,12 @@ def index(request):
     if url_parameter:
         software_list = Software.objects.filter(Q(name__icontains=url_parameter) | Q(acronym__icontains=url_parameter))
     else:
-        software_list = Software.objects.order_by('-updated_at')[:6]
+        software_list = Software.objects.filter(Q(name__icontains='valorant') |
+                                                Q(name__icontains='autodesk maya') |
+                                                Q(name__icontains='minecraft') |
+                                                Q(name__icontains='fortnite') |
+                                                Q(name__icontains='league of legends')
+                                                ).order_by('-updated_at')[:6]
 
     context['software_list'] = software_list
 
