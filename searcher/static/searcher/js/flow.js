@@ -56,7 +56,7 @@ function getResults() {
             .append(
               `<li class="rs-card small">
         <img
-          src="${computer.fields.image}"
+          src="${!computer.fields.image.includes('https') ? "https://storage.googleapis.com/pcqueroda-images/" + computer.fields.image : computer.fields.image}"
           alt="${computer.fields.title}"
         />
         <div class="description">
