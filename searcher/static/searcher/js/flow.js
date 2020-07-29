@@ -37,7 +37,12 @@ function getResults() {
         $(".results .rs-card.big")
           .append(
             ` <img
-      src="${featured.fields.image}"
+      src="${
+        !featured.fields.image.includes("https")
+          ? "https://storage.googleapis.com/pcqueroda-images/" +
+            featured.fields.image
+          : featured.fields.image
+      }"
       alt="${featured.fields.title}"
     />
     <div class="description">
@@ -56,7 +61,12 @@ function getResults() {
             .append(
               `<li class="rs-card small">
         <img
-          src="${!computer.fields.image.includes('https') ? "https://storage.googleapis.com/pcqueroda-images/" + computer.fields.image : computer.fields.image}"
+          src="${
+            !computer.fields.image.includes("https")
+              ? "https://storage.googleapis.com/pcqueroda-images/" +
+                computer.fields.image
+              : computer.fields.image
+          }"
           alt="${computer.fields.title}"
         />
         <div class="description">
