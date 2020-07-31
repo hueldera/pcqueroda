@@ -109,9 +109,17 @@
       var elmt = document.getElementsByTagName("body")[0];
       elmt.appendChild(lmdimgpixel);
     </script>
+    <div id="fb-root"></div>
+    <script
+      async
+      defer
+      crossorigin="anonymous"
+      src="https://connect.facebook.net/pt_BR/sdk.js#xfbml=1&version=v7.0&appId=1056541204742488&autoLogAppEvents=1"
+      nonce="HMKNpwDF"
+    ></script>
     <div class="container">
       <header>
-        <a>
+        <a href="?">
           <img src="{% static 'searcher/logo.png' %}" alt="Logo" width="300" />
         </a>
         <h4>
@@ -126,6 +134,7 @@
           {% block content %} {% endblock %}
         </div>
       </main>
+
       <div class="share-buttons">
         Compartilhar
         <ul>
@@ -161,6 +170,32 @@
           <path d="M181 226V0L0 226H181Z" fill="#12FF8D" />
         </svg>
       </div>
+
+      <!-- <script>
+        /**
+         *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+         *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+        /*
+      var disqus_config = function () {
+      this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+      this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+      };
+      */
+        (function () {
+          // DON'T EDIT BELOW THIS LINE
+          var d = document,
+            s = d.createElement("script");
+          s.src = "https://pcqueroda.disqus.com/embed.js";
+          s.setAttribute("data-timestamp", +new Date());
+          (d.head || d.body).appendChild(s);
+        })();
+      </script>
+      <noscript
+        >Please enable JavaScript to view the
+        <a href="https://disqus.com/?ref_noscript"
+          >comments powered by Disqus.</a
+        ></noscript
+      > -->
 
       <footer>
         <p>

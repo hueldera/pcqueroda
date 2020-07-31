@@ -86,7 +86,7 @@ def discover_computers(request):
                             Q(processor_level__gte=min_processor_level) &
                             Q(memory_level__gte=min_memory_level) &
                             Q(category__iexact=category)
-                            ).order_by('processor_level', 'graphics_level', 'memory_level', 'price')
+                            ).order_by('price', '-processor_level', '-graphics_level', '-memory_level')
 
     # print(computers)
     base_computers = {}
@@ -102,8 +102,8 @@ def discover_computers(request):
 
     for computer_category in base_computers.values():
         if len(computer_category) > 3:
-            computer_list.append(computer_category[0])
             computer_list.append(computer_category[round(len(computer_category)/2)])
+            computer_list.append(computer_category[0])
             computer_list.append(computer_category[len(computer_category)-1])
         else:
             computer_list =  computer_list + computer_category
