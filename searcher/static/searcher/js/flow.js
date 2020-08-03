@@ -46,6 +46,7 @@ function getResults() {
       alt="${featured.fields.title}"
     />
     <div class="description">
+      <span class="label label-primary">Roda no Médio</span>
       <h3>R$ ${featured.fields.price.toLocaleString("pt-br")}</h3>
       <p>
         ${featured.fields.title}
@@ -56,10 +57,13 @@ function getResults() {
           .hide()
           .fadeIn();
 
-        data["success"]["computer_list"].slice(1).map(function (computer) {
-          $(".results .rs-card-list")
-            .append(
-              `<li class="rs-card small">
+        data["success"]["computer_list"]
+          .slice(1)
+          .map(function (computer, index) {
+            $(".results .rs-card-list")
+              .append(
+                `<li class="rs-card small">
+
         <img
           src="${
             !computer.fields.image.includes("https")
@@ -70,6 +74,9 @@ function getResults() {
           alt="${computer.fields.title}"
         />
         <div class="description">
+        <span class="label label-primary">${
+          !index ? "Roda no Mínimo" : "Roda no Ultra"
+        }</span>
           <h3>R$ ${computer.fields.price.toLocaleString("pt-br")}</h3>
           <p>
             ${computer.fields.title}
@@ -79,10 +86,10 @@ function getResults() {
           }" target="_blank">VER MAIS</a>
         </div>
       </li>`
-            )
-            .hide()
-            .fadeIn();
-        });
+              )
+              .hide()
+              .fadeIn();
+          });
       }
     },
   });
