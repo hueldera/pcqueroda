@@ -2,12 +2,13 @@ from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.template.loader import render_to_string
 from django.http import JsonResponse
-from .models import Software, Computer
+from .models import Software, Computer, LeadList
 from django.db.models import Q, Model, Max, Min
 from django.core import serializers
 import json
 from django.template.defaultfilters import register
 from urllib.parse import unquote
+
 
 
 @register.filter
@@ -39,6 +40,15 @@ def index(request):
         return JsonResponse(data=data_dict, safe=False)
 
     return render(request, 'searcher/index.html', context)
+
+def make_lead(request):
+    try:
+        email = request.POST['email']
+        LeadList(email=email).save()
+    except:
+        return JsonResponse({'error': {'message': 'Não foi possível salvar o e-mail.'}})
+    return JsonResponse({'success': {'message': 'Cadastrado com sucesso.'}})
+
 
 def discover_computers(request):
     context = {}

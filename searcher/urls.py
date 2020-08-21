@@ -6,4 +6,5 @@ from . import views
 urlpatterns = [
     path('', views.index, name='index'),
     path('results', views.discover_computers, name='results'),
+    path('make_lead', views.make_lead, name='lead'),
 ]

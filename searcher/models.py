@@ -53,3 +53,12 @@ class Computer(models.Model):
 
     def __str__(self):
         return self.title
+
+class LeadList(models.Model):
+    nome = models.CharField(max_length=255, null=True, blank=True)
+    email = models.EmailField(unique=True)
+    phone = models.CharField(max_length=15, null=True, blank=True)
+    birthday = models.DateField(null=True, blank=True)
+
+    def __str__(self):
+        return self.email

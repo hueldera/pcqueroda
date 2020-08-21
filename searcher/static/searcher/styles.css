@@ -7,9 +7,53 @@ body {
   padding: 0;
 }
 
+.modal-container {
+  background-color: #10141e;
+}
+
+.modal-container p {
+  color: #cccccc;
+}
+
+.modal-header .btn.btn-clear {
+  color: #ffffff;
+}
+
+#mail-prompt input[type="email"] {
+  border-radius: 10px;
+  width: 100%;
+  padding: 7px;
+  border: none;
+  outline: none;
+}
+
+.modal h5 {
+  color: #12ff8d;
+}
+
 h5 {
   color: #12ff8d;
-  font-weight: bold;
+  font-weight: 700;
+}
+
+.modal .content button {
+  border: none;
+  background-color: #5452d0;
+  padding: 7px;
+  color: rgb(255, 255, 255);
+  width: 100%;
+}
+
+.modal .content button:hover {
+  cursor: pointer;
+  background-color: #5a57f0;
+}
+
+.modal-footer .btn {
+  color: #d8d8d8;
+}
+.modal-footer .btn:hover {
+  color: #ff3131;
 }
 
 .step-description h6 span {
@@ -65,6 +109,7 @@ h5 {
   justify-content: center;
   max-width: 800px;
   padding: 20px;
+  background-color: #ffffff;
 }
 
 #comments span._5mdd > span {

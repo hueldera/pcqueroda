@@ -1,7 +1,7 @@
 var state = {
   activeStep: $(".steps-wrapper .step .active").data("step"),
   softwares: {},
-  type: "",
+  type: "Desktop",
 };
 
 function getResults() {
@@ -109,6 +109,13 @@ function showStep(step) {
     $(".search-next button").show();
   } else {
     $(".search-next button").hide();
+
+    if (!localStorage["mailprompt"]) {
+      setTimeout(function () {
+        $("#mail-prompt").addClass("active");
+      }, 3000);
+    }
+
     getResults();
   }
 
