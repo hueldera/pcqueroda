@@ -8,6 +8,7 @@ from django.core import serializers
 import json
 from django.template.defaultfilters import register
 from urllib.parse import unquote
+from django.views.decorators.csrf import csrf_exempt
 
 
 
@@ -41,6 +42,7 @@ def index(request):
 
     return render(request, 'searcher/index.html', context)
 
+@csrf_exempt
 def make_lead(request):
     try:
         email = request.POST['email']
