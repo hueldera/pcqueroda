@@ -45,7 +45,8 @@ def make_lead(request):
     try:
         email = request.POST['email']
         LeadList(email=email).save()
-    except:
+    except Exception as e:
+        print(e)
         return JsonResponse({'error': {'message': 'Não foi possível salvar o e-mail.'}})
     return JsonResponse({'success': {'message': 'Cadastrado com sucesso.'}})
 
